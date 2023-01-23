@@ -7,4 +7,5 @@ class MyRoutes {
   static String y_home_page = "/y_home_page";
   static String fe_home_page = "/fe_home_page";
   static String dr_home_page = "/dr_home_page";
+  static String verifyEmailRoute = '/very-email';
 }

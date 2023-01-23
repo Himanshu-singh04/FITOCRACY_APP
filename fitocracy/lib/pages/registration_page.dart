@@ -1,3 +1,8 @@
+import 'dart:developer';
+
+import 'package:fitocracy/services/auth/auth_exceptions.dart';
+import 'package:fitocracy/services/auth/auth_service.dart';
+import 'package:fitocracy/utils/show_error_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/routes.dart';
@@ -10,6 +15,30 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
+  late final TextEditingController _name;
+  late final TextEditingController _email;
+  late final TextEditingController _password;
+  late final TextEditingController _confirmpassword;
+
+  @override
+  void initState() {
+    //set the initial value of text field
+    _name = TextEditingController();
+    _email = TextEditingController();
+    _password = TextEditingController();
+    _confirmpassword = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _name.dispose();
+    _email.dispose();
+    _password.dispose();
+    _confirmpassword.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -39,6 +68,7 @@ class _RegistrationState extends State<Registration> {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: _name,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25.0),
@@ -57,6 +87,7 @@ class _RegistrationState extends State<Registration> {
                     height: 8,
                   ),
                   TextField(
+                    controller: _email,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25.0),
@@ -69,6 +100,7 @@ class _RegistrationState extends State<Registration> {
                     height: 8,
                   ),
                   TextField(
+                    controller: _password,
                     obscureText: true,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -82,6 +114,7 @@ class _RegistrationState extends State<Registration> {
                     height: 8,
                   ),
                   TextField(
+                    controller: _confirmpassword,
                     obscureText: true,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -100,8 +133,47 @@ class _RegistrationState extends State<Registration> {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    onPressed: () async {
+                      // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      final email = _email.text;
+                      final password = _password.text;
+                      final confirmPassword = _confirmpassword.text;
+                      final name = _name.text;
+                      try {
+                        final isPasswordSame =
+                            (password == confirmPassword) ? true : false;
+                        log(isPasswordSame.toString());
+                        log('$email + $password');
+                        if (isPasswordSame) {
+                          await AuthService.firebase()
+                              .createUser(email: email, password: password);
+                          final user = AuthService.firebase().currentUser;
+
+                          if (user?.isEmailVerified ?? false) {
+                            // devtools.log(userCredential.toString());
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                MyRoutes.homeRoute, (route) => false);
+                          } else {
+                            await AuthService.firebase()
+                                .sendEmailVerification();
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                MyRoutes.verifyEmailRoute, (route) => false);
+                          }
+                        } else {
+                          showErrorDiaglog(
+                              context, 'Confirm password is different!');
+                        }
+                      } on WeakPasswordAuthException {
+                        await showErrorDiaglog(context, 'Weak Password');
+                      } on EmailAlreadyInUseAuthException {
+                        await showErrorDiaglog(
+                            context, 'Email is already in use');
+                      } on InvalidEmailAuthException {
+                        await showErrorDiaglog(
+                            context, 'This is an invalid email address');
+                      } on GenericAuthExceptions {
+                        await showErrorDiaglog(context, 'Failed to register');
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 248, 165, 40),
