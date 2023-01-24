@@ -1,3 +1,4 @@
+import 'package:fitocracy/fe_all_info/push_ups.dart';
 import 'package:fitocracy/pages/dr_home_page.dart';
 import 'package:fitocracy/pages/fe_home_page.dart';
 import 'package:fitocracy/pages/forgot_password.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.registrationRoute: (context) => Registration(),
         MyRoutes.y_home_page: (context) => y_home_page("Yogic Ways"),
         MyRoutes.fe_home_page: (context) => fe_home_page("Fitness Enthusiast"),
-        MyRoutes.dr_home_page: (context) => dr_home_page("Disease Related")
+        MyRoutes.dr_home_page: (context) => dr_home_page("Disease Related"),
+        MyRoutes.push_ups: (context) => push_ups()
       },
     );
   }

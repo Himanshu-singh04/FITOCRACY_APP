@@ -1,3 +1,4 @@
+import 'package:fitocracy/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -54,7 +55,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.push_ups);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
