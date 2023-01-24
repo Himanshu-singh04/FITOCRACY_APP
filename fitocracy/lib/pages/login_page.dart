@@ -1,3 +1,6 @@
+import 'package:fitocracy/services/auth/auth_exceptions.dart';
+import 'package:fitocracy/services/auth/auth_service.dart';
+import 'package:fitocracy/utils/show_error_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/routes.dart';
@@ -14,14 +17,39 @@ class _LoginPageState extends State<LoginPage> {
   bool changebutton = false;
   final _formkey = GlobalKey<FormState>();
 
-  moveToHome(BuildContext context) async {
+  moveToHome(BuildContext context, String email, String password) async {
     if (_formkey.currentState!.validate()) {
       setState(() {
         changebutton = true;
       });
-
-      await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      try {
+        await Future.delayed(Duration(seconds: 1));
+        await AuthService.firebase().logIn(email: email, password: password);
+        final user = AuthService.firebase().currentUser;
+        if (user?.isEmailVerified ?? false) {
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil(MyRoutes.homeRoute, (route) => false);
+        } else {
+          await AuthService.firebase().sendEmailVerification();
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              MyRoutes.verifyEmailRoute, (route) => false);
+        }
+      } on UserNotFoundAuthException {
+        await showErrorDiaglog(
+          context,
+          'User not Found',
+        );
+      } on WrongPasswordAuthException {
+        await showErrorDiaglog(
+          context,
+          'Wrong Credentials',
+        );
+      } on GenericAuthExceptions {
+        await showErrorDiaglog(
+          context,
+          'Authentication Error',
+        );
+      }
       setState(() {
         changebutton = false;
       });
@@ -30,6 +58,23 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    late final TextEditingController _email;
+    late final TextEditingController _password;
+
+    @override
+    void initState() {
+      _email = TextEditingController();
+      _password = TextEditingController();
+      super.initState();
+    }
+
+    @override
+    void dispose() {
+      _email.dispose();
+      _password.dispose();
+      super.dispose();
+    }
+
     return Material(
         color: Color.fromARGB(255, 186, 217, 194),
         child: SingleChildScrollView(
@@ -64,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: _email,
                         decoration: InputDecoration(
                           hintText: "Enter Username",
                           labelText: "Username",
@@ -80,6 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                         }),
                       ),
                       TextFormField(
+                          controller: _password,
                           obscureText: true,
                           decoration: InputDecoration(
                             hintText: "Enter Password",
@@ -123,7 +170,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(changebutton ? 50 : 25),
                   child: InkWell(
                     splashColor: Colors.black,
-                    onTap: () => moveToHome(context),
+                    onTap: () =>
+                        moveToHome(context, _email.text, _password.text),
                     child: AnimatedContainer(
                       duration: Duration(seconds: 1),
                       width: changebutton ? 75 : 250,

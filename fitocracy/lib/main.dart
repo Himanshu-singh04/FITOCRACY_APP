@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:fitocracy/pages/dr_home_page.dart';
 import 'package:fitocracy/pages/fe_home_page.dart';
 import 'package:fitocracy/pages/forgot_password.dart';
@@ -5,6 +6,8 @@ import 'package:fitocracy/pages/home_page.dart';
 import 'package:fitocracy/pages/registration_page.dart';
 import 'package:fitocracy/pages/stash_page.dart';
 import 'package:fitocracy/pages/y_home_page.dart';
+import 'package:fitocracy/services/auth/auth_service.dart';
+import 'package:fitocracy/utils/verify_email_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/": (context) => Stash(),
+        "/": (context) => StartPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.forgotpassRoute: (context) => Forgotpass(),
@@ -45,8 +48,44 @@ class MyApp extends StatelessWidget {
         MyRoutes.registrationRoute: (context) => Registration(),
         MyRoutes.y_home_page: (context) => y_home_page("Yogic Ways"),
         MyRoutes.fe_home_page: (context) => fe_home_page("Fitness Enthusiast"),
-        MyRoutes.dr_home_page: (context) => dr_home_page("Disease Related")
+        MyRoutes.dr_home_page: (context) => dr_home_page("Disease Related"),
+        MyRoutes.verifyEmailRoute: (context) => VerifyEmailView()
       },
     );
+  }
+}
+
+class StartPage extends StatefulWidget {
+  const StartPage({super.key});
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: AuthService.firebase().initalize(),
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+              AuthService.firebase().logOut();
+              final user = AuthService.firebase().currentUser;
+              if (user != null) {
+                if (user.isEmailVerified) {
+                  log('User is Verified');
+                  return const HomePage();
+                } else {
+                  AuthService.firebase().sendEmailVerification();
+                  return const VerifyEmailView();
+                }
+              } else {
+                return const Stash();
+              }
+            default:
+              return const CircularProgressIndicator();
+          }
+        });
   }
 }
