@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "990677257546",
+    "project_id": "fitocracy-app",
+    "storage_bucket": "fitocracy-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990677257546:android:70b2eeaee22412fa3bc5b3",
+        "android_client_info": {
+          "package_name": "com.example.fitocracy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990677257546-aqamtr87ifo089bl812kkn969bdf6846.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdMDKaI98FkL2tiBUa36fG-LcX6TwF9BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990677257546-aqamtr87ifo089bl812kkn969bdf6846.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

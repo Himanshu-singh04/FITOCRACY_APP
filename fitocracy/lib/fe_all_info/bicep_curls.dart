@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class bicep_curls extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<bicep_curls> createState() => _bicep_curlsState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _bicep_curlsState extends State<bicep_curls> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/bicep_curls.jpeg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Bicep Curls",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,7 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''Bicep curls are one of the most effective exercises for increasing the size and strength of the biceps. They work both heads of the biceps evenly. Minimal equipment is required to perform bicep curls. You don't need any kind of special machine, bench, or pad and can do them virtually anywhere. Bicep curls are very easy to learn, so they are great for beginners. There's less injury risk associated with bicep curls compared to preacher curls. You don't need a spotter and can safely train to failure.'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,10 +73,11 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''It's easier to cheat on a bicep curl by swinging or using other muscles to help get the weight up. Improper form can lead to biceps tendinitis which is typically associated with pain in the front of the shoulder.'''),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

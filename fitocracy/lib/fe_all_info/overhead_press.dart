@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class overhead_press extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<overhead_press> createState() => _overhead_pressState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _overhead_pressState extends State<overhead_press> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/overhead_press.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Overhead Press",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,8 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''Powerlifters need to train the bench press, as it is one of the three competitive lifts. However, they may also benefit from some overhead pressing if they have an anterior delt weakness for example.  
+Overhead pressing is more specific for other sports including Olympic Lifting, Strongman and CrossFit, and should be used much more frequently than the bench press in these activities'''),
               SizedBox(
                 height: 30,
               ),
@@ -73,8 +73,9 @@ Pushups are a fast and effective exercise for building strength. They can be don
               ),
               // Scaffold(),
               // Text("one of ")
-              Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+              Text('''1.Not using full range of motion
+2.Not keeping glutes and quads contracted.
+3.Lumbar compensations for poor overhead mobility.'''),
               SizedBox(
                 height: 20,
               ),

@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class lunges extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<lunges> createState() => _lungesState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _lungesState extends State<lunges> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/Lunges.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Lunges",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,15 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
+                  '''Good for Weight Loss: Lunges target the large muscles in the lower body. Therefore, they help build lean muscle while reducing body fat.
 
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+Improves Balance: Lunges cause you to work both sides of your body independently. This helps you develop your stabilizing muscles, so you become more balanced and more coordinated.
+
+Improves Posture and Alignment: Lunges' ability to work both sides of the body improve posture and alignment.
+
+Versatile: Lunges are great because they are so versatile. There are a variety of lunges you can do that will work different sections of the lower body.
+
+Do Them Anywhere: Because lunges don't require equipment, you can do them anywhere in the park, in the office, at home.'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,7 +81,7 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''There's one downside to lunges, it's that they can result in injuries like overstretching'''),
               SizedBox(
                 height: 20,
               ),

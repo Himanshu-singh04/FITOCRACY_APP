@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+class squats extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<squats> createState() => _squatsState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _squatsState extends State<squats> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +34,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/squats.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +42,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Squats",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +58,13 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''Experts regard the squat as one of the most effectiveTrusted Source exercises for enhancing athletic performance. It is relatively easy for most people to perform because it does not require any equipment.
+                  The specific benefits to the body include:
+-strengthening the musclesTrusted Source in the legs, including the quadriceps, calves, and hamstrings
+-strengthening the knee joint
+-burning fat and promoting weight loss
+-strengthening the lower back
+-improving flexibility in the lower body'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,7 +78,7 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''People who squat without proper form may experience knee pain. They can help prevent this by ensuring that the knees stay in line with the feet during the squat.'''),
               SizedBox(
                 height: 20,
               ),

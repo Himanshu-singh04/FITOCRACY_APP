@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class glute_bridge extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<glute_bridge> createState() => _glute_bridgeState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _glute_bridgeState extends State<glute_bridge> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/glute_bridge.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Glute Bridge",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,7 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''Glute bridges are accessible and great for beginners. As long as you can get down on the floor, you can do a glute bridge. In fact, individuals who have never done a hip thrust should start with glute bridges to get the hang of the hip movement and build a foundation of strength.'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,7 +73,7 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''Glute bridges can help you build a good foundation of strength and tone your glute muscles, but at a certain point you'll max out your booty gains. You also use a smaller range of motion when you do glute bridges, which isn't as effective for building size and strength. Still, there are options for adding challenge.'''),
               SizedBox(
                 height: 20,
               ),

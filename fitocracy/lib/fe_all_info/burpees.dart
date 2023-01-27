@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class burpees extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<burpees> createState() => _burpeesState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _burpeesState extends State<burpees> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/burpees.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Burpees",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,9 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''Gets you sweating - The exercise will have you sweating vigorously after just a couple of minutes. It's great for warming up and getting your body ready for further, higher intensity exercise.
+Full body exercise - Burpees are perfect for the whole body and they can get you fitter, faster. With time, you can attune your body for burpees and they'll help you rid yourself of calories quickly.
+Functionally beneficial - Burpees work on a range of muscles in a functional manner, so the improvements in strength and mobility can be seen and felt in day-to-day life, and not just in the gym.'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,10 +75,12 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''Injury Potential - A lot of people risk injury to their wrists and anterior shoulder muscle because of bad burpee form or due to prior injuries. It's important to learn the proper technique before attempting it and avoid pushing yourself too hard. 
+Variety is needed - To improve the effectiveness of your burpees, you'll need to learn variations on form and sets. There are endless iterations and versions of this workout, depending on where and with whom you train. '''),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

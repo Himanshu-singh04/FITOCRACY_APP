@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class side_planks extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<side_planks> createState() => _side_planksState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _side_planksState extends State<side_planks> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/side_planks.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "side_planks",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,9 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
+                  '''It might look very easy and simple at first, however looks can be deceiving. The plank is one of the most challenging exercises of all. You might also ask if its benefits outweigh the risks. The majority of fitness enthusiasts are very skeptical about the plank.
 
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+They figure there are superior ways to train the abdominal muscles, like the butterfly crunches, hanging leg raises, reverse crunches, the stomach vacuum etc.'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,10 +75,11 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''Keep in mind that doing planks alone won’t give you that kind of results. To get all the benefits of it, combine it with other core exercises as a part of a consistent training regimen'''),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

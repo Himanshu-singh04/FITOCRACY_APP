@@ -17,14 +17,12 @@ class _fe_home_pageState extends State<fe_home_page> {
     "Lunges",
     "Planks",
     "Bicep Curls",
-    "Circuit Training",
     "Burpees",
     "Side Planks",
     "Bench Press",
     "Deadlifts",
     "Crunches",
     "Dumbbell Press",
-    "Planks",
     "Glute Bridge",
     "Overhead Press",
     ""
@@ -72,7 +70,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.squats);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -89,7 +87,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.lunges);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -106,7 +104,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.planks);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -123,24 +121,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 248, 165, 40),
-                      onPrimary: Colors.black,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                ElevatedButton(
-                  child: Text(
-                    "Circuit Training",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.bicep_curls);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -157,7 +138,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.burpees);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -174,7 +155,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.side_planks);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -191,7 +172,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.bench_press);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -208,7 +189,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.deadlifts);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -225,7 +206,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.crunches);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -242,24 +223,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 248, 165, 40),
-                      onPrimary: Colors.black,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                ElevatedButton(
-                  child: Text(
-                    "Plancks",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.dumbbell_press);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -276,7 +240,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.glute_bridge);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),
@@ -293,7 +257,7 @@ class _fe_home_pageState extends State<fe_home_page> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    return null;
+                    Navigator.pushNamed(context, MyRoutes.overhead_press);
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 248, 165, 40),

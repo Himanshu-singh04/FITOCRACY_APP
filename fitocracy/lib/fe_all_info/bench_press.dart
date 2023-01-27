@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-class push_ups extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+class bench_press extends StatefulWidget {
   @override
-  State<push_ups> createState() => _push_upsState();
+  State<bench_press> createState() => _bench_pressState();
 }
 
-class _push_upsState extends State<push_ups> {
+class _bench_pressState extends State<bench_press> {
   int _counter = 10;
   late Timer _timer;
 
@@ -34,7 +35,7 @@ class _push_upsState extends State<push_ups> {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/push_ups.jpg",
+                  "assets/bench_press.jpg",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -42,7 +43,7 @@ class _push_upsState extends State<push_ups> {
                 height: 20,
               ),
               Text(
-                "Push-Ups",
+                "Bench Press",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
@@ -58,9 +59,7 @@ class _push_upsState extends State<push_ups> {
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging the abdominal muscles.
-
-Pushups are a fast and effective exercise for building strength. They can be done from virtually anywhere and don't require any equipment'''),
+                  '''You train multiple muscle groups. You can easily vary in grip. You can easily vary between pectoralis major (large chest muscle) and pectoralis minor (small chest muscle, or upper chest)'''),
               SizedBox(
                 height: 30,
               ),
@@ -74,10 +73,11 @@ Pushups are a fast and effective exercise for building strength. They can be don
               // Scaffold(),
               // Text("one of ")
               Text(
-                  '''One risk of doing any one exercise every day is that your body will no longer be challenged after a while. That increases your risk of plateauing.This happens because your muscles adapt and improve their function when they are stressed'''),
+                  '''Chance of too much pressure on the shoulder joint. Often dependent on a spotter'''),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

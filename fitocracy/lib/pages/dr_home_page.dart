@@ -27,7 +27,7 @@ class _dr_home_pageState extends State<dr_home_page> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 186, 217, 194),
-        title: Text('Fitness Enthusiast'),
+        title: Text('Disease Related'),
         centerTitle: true,
       ),
       body: Material(
@@ -191,6 +191,9 @@ class _dr_home_pageState extends State<dr_home_page> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
                 ),
+                SizedBox(
+                  height: 250,
+                )
               ],
             ),
           ),
