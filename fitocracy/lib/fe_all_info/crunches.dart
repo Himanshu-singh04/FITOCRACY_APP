@@ -8,11 +8,11 @@ class crunches extends StatefulWidget {
 }
 
 class _crunchesState extends State<crunches> {
-  int _counter = 10;
+  int _counter = 100;
   late Timer _timer;
 
   void _startTimer() {
-    _counter = 10;
+    _counter = 100;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_counter > 0) {
         setState(() {
@@ -81,7 +81,13 @@ class _crunchesState extends State<crunches> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Count Down Timer'),
+                  Text(
+                    '2 Sets',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -112,7 +118,7 @@ class _crunchesState extends State<crunches> {
                       onPressed: () {
                         setState(() {
                           _timer.cancel();
-                          _counter = 10;
+                          _counter = 100;
                         });
                       },
                       child: Text('Reset'))

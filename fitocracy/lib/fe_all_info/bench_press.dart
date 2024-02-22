@@ -8,11 +8,11 @@ class bench_press extends StatefulWidget {
 }
 
 class _bench_pressState extends State<bench_press> {
-  int _counter = 10;
+  int _counter = 180;
   late Timer _timer;
 
   void _startTimer() {
-    _counter = 10;
+    _counter = 180;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_counter > 0) {
         setState(() {
@@ -81,7 +81,11 @@ class _bench_pressState extends State<bench_press> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Count Down Timer'),
+                  Text(
+                    '3 sets of 5',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w900),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -112,7 +116,7 @@ class _bench_pressState extends State<bench_press> {
                       onPressed: () {
                         setState(() {
                           _timer.cancel();
-                          _counter = 10;
+                          _counter = 180;
                         });
                       },
                       child: Text('Reset'))

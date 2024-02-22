@@ -1,3 +1,4 @@
+import 'package:fitocracy/pages/dg_home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/routes.dart';
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
                 child: Image.asset("assets/diet_guide.jpeg"),
               ),
               onTap: () {
-                //
+                Navigator.pushNamed(context, MyRoutes.dg_home_page);
               },
             ),
             InkWell(

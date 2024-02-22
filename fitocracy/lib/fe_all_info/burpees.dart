@@ -8,11 +8,11 @@ class burpees extends StatefulWidget {
 }
 
 class _burpeesState extends State<burpees> {
-  int _counter = 10;
+  int _counter = 60;
   late Timer _timer;
 
   void _startTimer() {
-    _counter = 10;
+    _counter = 60;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_counter > 0) {
         setState(() {
@@ -84,7 +84,11 @@ Variety is needed - To improve the effectiveness of your burpees, you'll need to
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Count Down Timer'),
+                  Text(
+                    'With 25 at first and gradually increase ',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w900),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -115,7 +119,7 @@ Variety is needed - To improve the effectiveness of your burpees, you'll need to
                       onPressed: () {
                         setState(() {
                           _timer.cancel();
-                          _counter = 10;
+                          _counter = 60;
                         });
                       },
                       child: Text('Reset'))

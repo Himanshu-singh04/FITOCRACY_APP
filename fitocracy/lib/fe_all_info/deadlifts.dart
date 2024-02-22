@@ -85,7 +85,11 @@ class _deadliftsState extends State<deadlifts> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Count Down Timer'),
+                  Text(
+                    '3 Sets with 3 times each',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w900),
+                  ),
                   SizedBox(
                     height: 20,
                   ),

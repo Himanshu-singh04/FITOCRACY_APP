@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:fitocracy/pages/dg_home_page.dart';
 import 'package:fitocracy/fe_all_info/bench_press.dart';
 import 'package:fitocracy/fe_all_info/bicep_curls.dart';
 import 'package:fitocracy/fe_all_info/burpees.dart';
@@ -76,7 +77,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.crunches: (context) => crunches(),
         MyRoutes.dumbbell_press: (context) => dumbbell_press(),
         MyRoutes.glute_bridge: (context) => glute_bridge(),
-        MyRoutes.overhead_press: (context) => overhead_press()
+        MyRoutes.overhead_press: (context) => overhead_press(),
+        MyRoutes.dg_home_page: (context) => dg_home_page()
       },
     );
   }

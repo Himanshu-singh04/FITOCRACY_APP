@@ -21,4 +21,5 @@ class MyRoutes {
   static String dumbbell_press = "/dumbbell_press";
   static String glute_bridge = "/glute_bridge";
   static String overhead_press = "/overhead_press";
+  static String dg_home_page = "/dg_home_page";
 }

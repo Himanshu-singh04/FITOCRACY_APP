@@ -8,11 +8,11 @@ class bicep_curls extends StatefulWidget {
 }
 
 class _bicep_curlsState extends State<bicep_curls> {
-  int _counter = 10;
+  int _counter = 180;
   late Timer _timer;
 
   void _startTimer() {
-    _counter = 10;
+    _counter = 180;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_counter > 0) {
         setState(() {
@@ -81,7 +81,11 @@ class _bicep_curlsState extends State<bicep_curls> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Count Down Timer'),
+                  Text(
+                    'Set of 3 with 10',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w900),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -112,7 +116,7 @@ class _bicep_curlsState extends State<bicep_curls> {
                       onPressed: () {
                         setState(() {
                           _timer.cancel();
-                          _counter = 10;
+                          _counter = 180;
                         });
                       },
                       child: Text('Reset'))
